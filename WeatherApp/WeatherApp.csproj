@@ -13,4 +13,8 @@
     <Content Include="Img\AppIcon.ico" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Font\" />
+  </ItemGroup>
+
 </Project>

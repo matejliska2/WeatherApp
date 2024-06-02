@@ -13,8 +13,9 @@
         Title="Weather App" Height="700" Width="1200">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height= "50*"/>
-            <RowDefinition Height= "50*"/>
+            <RowDefinition Height= "10*"/>
+            <RowDefinition Height= "45*"/>
+            <RowDefinition Height= "45*"/>
         </Grid.RowDefinitions>
 
         
@@ -25,14 +26,15 @@
         
         <Border CornerRadius="25 25 0 0" Grid.Row="0" Background="LightSkyBlue"></Border>
 
+        <Border CornerRadius="0 0 0 0" Grid.Row="1" Background="LightSkyBlue"></Border>
 
-        <Border CornerRadius="0 0 25 25" Grid.Row="1" Background="LightSkyBlue"></Border>
+        <Border CornerRadius="0 0 25 25" Grid.Row="2" Background="LightSkyBlue"></Border>
 
         <!-- Menu Bar -->
 
         <!-- Content Bars -->
 
-        <Grid Grid.Row="0">
+        <Grid Grid.Row="1">
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition />
@@ -43,7 +45,7 @@
             <Rectangle Grid.Column="1" />
         </Grid>
 
-        <Grid Grid.Row="1">
+        <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition />
                 <ColumnDefinition />
