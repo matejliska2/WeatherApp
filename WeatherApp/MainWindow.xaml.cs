@@ -10,5 +10,10 @@ namespace WeatherApp
         {
             InitializeComponent();
         }
+
+        private void Window_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+
+        }
     }
 }

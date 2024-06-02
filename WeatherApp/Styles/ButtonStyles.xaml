@@ -3,11 +3,9 @@
 
     
     <!-- Weather button -->
-    
+
     <Style x:Key="WeatherButton" TargetType="{x:Type Button}">
-        <Setter Property="Height" Value="250"/>
-        <Setter Property="Width" Value="180"/>
-        <Setter Property="Margin" Value="10 10 0 0"/>
+        <Setter Property="Margin" Value="10 50 10 50"/>
         <Setter Property="Foreground" Value="{StaticResource textColor}"/>
         <Setter Property="Cursor" Value="Hand"/>
         <Setter Property="Template">
@@ -15,8 +13,8 @@
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Grid x:Name="Grid">
                         <Border x:Name="Border"
-                            CornerRadius="10"
-                            Background="{StaticResource BorderColor}">
+                            CornerRadius="15"
+                            Background="{StaticResource WeatherBorderColor}">
                             <ContentPresenter HorizontalAlignment="Center"
                                                VerticalAlignment="Center">
                             </ContentPresenter>
@@ -44,7 +42,7 @@
         <Setter Property="Width" Value="25"/>
         <Setter Property="Margin" Value="0 15 15 0"/>
         <Setter Property="HorizontalAlignment" Value="Right"/>
-        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="Cursor" Value="Hand"/>
     </Style>
 
