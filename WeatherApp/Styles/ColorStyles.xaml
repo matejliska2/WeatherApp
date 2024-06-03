@@ -4,18 +4,18 @@
     
     <!-- App´s color-->
     <LinearGradientBrush x:Key="BackgroundColor" StartPoint="0,0" EndPoint="1,1">
-        <GradientStop Color="LightSkyBlue" Offset="0"/>
+        <GradientStop Color="#2b59f0" Offset="0"/>
         <GradientStop Color="#03adfc" Offset="1"/>
     </LinearGradientBrush>
 
     <!-- Weather button border -->
-    <SolidColorBrush x:Key="WeatherBorderColor" Color="#1c84e6"/>
+    <SolidColorBrush x:Key="WeatherBorderColor" Color="#2442d6"/>
 
     <!-- Color of the App´s border -->
     <SolidColorBrush x:Key="BorderColor" Color="#42a3ff"/>
     
     <!-- Color of the App´s border when hovered on-->
-    <SolidColorBrush x:Key="BorderColorBrush" Color="LightSkyBlue"/>
+    <SolidColorBrush x:Key="BorderColorBrush" Color="#03adfc"/>
 
     <!-- Color of the text -->
     <SolidColorBrush x:Key="textColor" Color="White"/>

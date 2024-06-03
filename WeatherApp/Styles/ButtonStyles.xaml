@@ -5,7 +5,7 @@
     <!-- Weather button -->
 
     <Style x:Key="WeatherButton" TargetType="{x:Type Button}">
-        <Setter Property="Margin" Value="10 50 10 50"/>
+        <Setter Property="Margin" Value="25 55 25 55"/>
         <Setter Property="Foreground" Value="{StaticResource textColor}"/>
         <Setter Property="Cursor" Value="Hand"/>
         <Setter Property="Template">
@@ -32,18 +32,133 @@
             </Setter.Value>
         </Setter>
     </Style>
-        
+    
+    <!-- Right weather button -->
+    <Style x:Key="RightWeatherButton" TargetType="{x:Type Button}">
+        <Setter Property="Margin" Value="20 55 30 55"/>
+        <Setter Property="Foreground" Value="{StaticResource textColor}"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid x:Name="Grid">
+                        <Border x:Name="Border"
+                            CornerRadius="15"
+                            Background="{StaticResource WeatherBorderColor}">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                               VerticalAlignment="Center">
+                            </ContentPresenter>
+                        </Border>
+                    </Grid>
+
+                    <ControlTemplate.Triggers>
+
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" TargetName="Border" Value="{StaticResource BorderColorBrush}"/>
+                        </Trigger>
+
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <!-- Left weather button -->
+    <Style x:Key="LeftWeatherButton" TargetType="{x:Type Button}">
+        <Setter Property="Margin" Value="30 55 20 55"/>
+        <Setter Property="Foreground" Value="{StaticResource textColor}"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid x:Name="Grid">
+                        <Border x:Name="Border"
+                            CornerRadius="15"
+                            Background="{StaticResource WeatherBorderColor}">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                               VerticalAlignment="Center">
+                            </ContentPresenter>
+                        </Border>
+                    </Grid>
+
+                    <ControlTemplate.Triggers>
+
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" TargetName="Border" Value="{StaticResource BorderColorBrush}"/>
+                        </Trigger>
+
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
     <!-- Power off buton -->
 
-    <ImageBrush x:Key="PowerOffBtnImgBrush" ImageSource="/Img/poweroffBtn.ico" Stretch="UniformToFill"/>
-
     <Style x:Key="PowerOffBtnStyle" TargetType="{x:Type Button}">
-        <Setter Property="Height" Value="25"/>
-        <Setter Property="Width" Value="25"/>
-        <Setter Property="Margin" Value="0 15 15 0"/>
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="Width" Value="40"/>
+        <Setter Property="Padding" Value="10 10 0 0"/>
+        <Setter Property="Margin" Value="0 0 20 0"/>
         <Setter Property="HorizontalAlignment" Value="Right"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid x:Name="Grid">
+                        <Border x:Name="Border"
+                    CornerRadius="25"
+                    Background="{StaticResource BackgroundColor}"
+                    BorderBrush="{StaticResource BorderColorBrush}">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center">
+                            </ContentPresenter>
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" TargetName="Border" Value="{StaticResource BorderColorBrush}"/>
+                        </Trigger>
+
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Search button -->
+    <Style x:Key="SearchBtn" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="Width" Value="100"/>
+        <Setter Property="Padding" Value="10 10 0 0"/>
+        <Setter Property="Margin" Value="660 0 0 0"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid x:Name="Grid">
+                        <Border x:Name="Border"
+                            CornerRadius="15"
+                            Background="{StaticResource BackgroundColor}"
+                            BorderBrush="{StaticResource BorderColorBrush}">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                               VerticalAlignment="Center">
+                            </ContentPresenter>
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" TargetName="Border" Value="{StaticResource BorderColorBrush}"/>
+                        </Trigger>
+
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
     </Style>
 
 </ResourceDictionary>
