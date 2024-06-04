@@ -12,7 +12,7 @@
         FontFamily="Cambria"
         WindowStartupLocation="CenterScreen"
         Title="Weather App" Height="700" Width="1200">
-    
+
     <!-- Sorting out rows-->
     <Grid>
         <Grid.RowDefinitions>
@@ -32,21 +32,22 @@
 
         <!-- Content in the row 0 -->
         <Grid Grid.Row="0">
-            
+
             <!-- Search bar -->
             <TextBox
                  Style="{StaticResource txtBox_Txt}" TextChanged="TextBox_TextChanged"
-                 
                          />
-            
+
             <!-- Search button -->
             <Button
                 Style="{StaticResource SearchBtn}"
                 Content="Enter"
                 FontSize="20"
                 Foreground="White"
+                Name="SearchBtn"
+                Click="SearchBtn_Click"
                 />
-            
+
             <!-- PowerOff button -->
             <Button
                 Style="{StaticResource PowerOffBtnStyle}"
@@ -55,26 +56,62 @@
                 FontSize="30"
                 FontStyle="Normal"
                 Foreground="White"
+                Name="PowerOffBtn"
+                Click="PowerOffBtn_Click_1"
                 />
         </Grid>
-        
-        
+
+
         <!-- Content in the 1st row -->
         <Grid Grid.Row="1">
-            
-                <!-- Sorting out columns in the 1st row -->
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition />
-                    <ColumnDefinition />
-                </Grid.ColumnDefinitions>
-                
-                <!-- Sorting out API info -->
-                <Grid Grid.Column="1">
-                        <Grid.RowDefinitions>
-                            <RowDefinition/>
-                            <RowDefinition/>
-                        </Grid.RowDefinitions>
-            
+
+            <!-- Sorting out columns in the 1st row -->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0">
+                <Label x:Name="Place"
+                       FontSize="45"
+                       Foreground="{StaticResource textColor}"
+                       HorizontalAlignment="Left"   
+                       Margin="20 0 0 0"
+                       Content="- - -"
+                       />
+                <Label x:Name="Clock"
+                       FontSize="20"
+                       Foreground="{StaticResource textColor}"
+                       HorizontalAlignment="Left"         
+                       Margin="20 0 0 0"
+                       Content="{Binding Path= Now, StringFormat='{}{0:hh:mm:ss tt}'}" Height="50"
+                       />
+
+                <Label x:Name="Temp"
+                               Content="- - -"
+                               FontSize="55"
+                               Foreground="{StaticResource textColor}"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Top"
+                               Margin="20 10 0 0"
+                               />
+                <Label x:Name="weatherState"
+                               Content="- - -"
+                               FontSize="20"
+                               Foreground="{StaticResource textColor}"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Top"
+                               Margin="20 0 0 0"
+                               />
+            </StackPanel>
+
+            <!-- Sorting out API info -->
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
                 <!-- Highest temperature, Wind speed, Chance of rain -->
                 <Grid Grid.Row="0">
                     <Grid.ColumnDefinitions>
@@ -82,8 +119,39 @@
                         <ColumnDefinition/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
+                    
+                    <!-- 1st row API elements -->
+                    <StackPanel Grid.Column="0">
+                        <Label x:Name="max_temp"
+                               Content="- - -"
+                               FontSize="20"
+                               Foreground="{StaticResource textColor}"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Top"
+                               Margin="0 70 0 0"
+                               />
+                    </StackPanel>
+                    <StackPanel Grid.Column="1">
+                        <Label x:Name="wind"
+                               Content="- - -"
+                               FontSize="20"
+                               Foreground="{StaticResource textColor}"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Top"
+                               Margin="0 70 0 0"
+                               />   
+                    </StackPanel>
+                    <StackPanel Grid.Column="2">
+                        <Label x:Name="chanceRain"
+                               Content="- - -"
+                               FontSize="20"
+                               Foreground="{StaticResource textColor}"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Top"
+                               Margin="0 70 0 0"
+                               />
+                    </StackPanel>
                 </Grid>
-
                 <!-- Lowest temperature, Wind direction, Rainfall-->
                 <Grid Grid.Row="1">
                     <Grid.ColumnDefinitions>
@@ -91,13 +159,45 @@
                         <ColumnDefinition/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
+
+                    <!-- 2nd row API elements -->
+                    <StackPanel Grid.Column="0">
+                        <Label x:Name="min_temp"
+                               Content="- - -"
+                               FontSize="20"
+                               Foreground="{StaticResource textColor}"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Top"
+                               Margin="0 70 0 0"
+                               />
+                    </StackPanel>
+                    <StackPanel Grid.Column="1">
+                        <Label x:Name="windDirection"
+                               Content="- - -"
+                               FontSize="20"
+                               Foreground="{StaticResource textColor}"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Top"
+                               Margin="0 70 0 0"
+                               />
+                    </StackPanel>
+                    <StackPanel Grid.Column="2">
+                        <Label x:Name="Rainfall"
+                               Content="- - -"
+                               FontSize="20"
+                               Foreground="{StaticResource textColor}"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Top"
+                               Margin="0 70 0 0"
+                               />
+                    </StackPanel>
                 </Grid>
             </Grid>
         </Grid>
-        
-            <!-- Content in the 2nd row -->
-            <Grid Grid.Row="2">
-            
+
+        <!-- Content in the 2nd row -->
+        <Grid Grid.Row="2">
+
             <!-- Sorting out columns in row 2 -->
             <Grid.ColumnDefinitions>
                 <ColumnDefinition />
@@ -115,7 +215,7 @@
                        FontSize="30"
                        Foreground="{StaticResource textColor}"
                        />
-             
+
             <!-- Today's Weather buttons-->
             <Button Grid.Column="0"
                 Style="{StaticResource LeftWeatherButton}"

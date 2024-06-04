@@ -122,6 +122,9 @@
                             <Setter Property="Background" TargetName="Border" Value="{StaticResource BorderColorBrush}"/>
                         </Trigger>
 
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" TargetName="Border" Value="{StaticResource BorderColorBrush}"/>
+                        </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
